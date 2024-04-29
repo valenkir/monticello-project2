@@ -1,1 +1,133 @@
-/*# sourceMappingURL=main.css.map */
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf") format("truetype-variations");
+  font-weight: 100 1000;
+}
+/*HEADER*/
+.home-header {
+  background-image: linear-gradient(to right, rgba(85, 183, 255, 0.9019607843), rgba(126, 90, 255, 0.9019607843)), url("../assets/images/img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: #ffffff;
+  position: relative;
+}
+
+.navbar {
+  color: #ffffff;
+}
+
+.navbar-list__logo {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.navbar-list__links {
+  display: none;
+  font-family: "Source Sans 3", sans-serif;
+  text-transform: uppercase;
+}
+.navbar-list__links--mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #7e5aff;
+  width: 100vw;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  gap: 20px;
+  text-align: center;
+  padding: 20%;
+  z-index: 1;
+}
+
+.navbar-list__mobile-links {
+  display: block;
+}
+
+.navbar-list__social-icons {
+  display: none;
+}
+
+.home-header__slider-dots {
+  display: none;
+}
+
+.home-header__scroll-icon {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 150px;
+}
+
+/*SLIDER*/
+.home-header__about-us-slider {
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1.9;
+}
+.home-header__about-us-slider p {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 550px) {
+  .home-header {
+    padding-top: 52px;
+  }
+  .navbar-list__social-icons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .home-header__dots-container {
+    display: block;
+    position: absolute;
+    right: 52px;
+    top: 42%;
+  }
+  .dots {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .dots__item {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  .slick-active .dots__item {
+    background-color: white;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+  }
+  .navbar-list__mobile-links {
+    display: none;
+  }
+  .navbar-list__links {
+    display: flex;
+    gap: 70px;
+  }
+  .home-header__about-us-slider {
+    margin-top: 280px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .home-header__about-us-slider {
+    margin-top: 320px;
+  }
+}/*# sourceMappingURL=main.css.map */

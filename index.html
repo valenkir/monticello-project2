@@ -13,22 +13,193 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link
       rel="stylesheet"
-      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+      integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="./css/utilities.css" />
+    <link
+      rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
-    <link rel="stylesheet" href="./css/utilities.css" />
     <link rel="stylesheet" href="./css/main.css" />
-    <script defer src="./js/jquery.js"></script>
+    <script defer src="./js/main.js"></script>
+  </head>
+  <body>
+    <header id="home-header" class="home-header">
+      <nav class="navbar">
+        <ul class="navbar-list d-flex justify-space-around align-items-center">
+          <li>
+            <img
+              src="./assets/images/svg/Logo.svg"
+              alt="Monticello logo"
+              class="navbar-list__logo"
+            />
+          </li>
+          <li class="navbar-list__mobile-links">
+            <svg
+              class="circle-icon"
+              viewBox="0 0 9 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="4.5" cy="4.5" r="4" stroke="white" />
+            </svg>
+            <svg
+              class="circle-icon"
+              viewBox="0 0 9 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="4.5" cy="4.5" r="4" stroke="white" />
+            </svg>
+            <svg
+              class="circle-icon"
+              viewBox="0 0 9 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="4.5" cy="4.5" r="4" stroke="white" />
+            </svg>
+          </li>
+          <li>
+            <ul class="navbar-list__links fs-xs">
+              <li>
+                <svg
+                  class="circle-icon"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="4.5" cy="4.5" r="4" stroke="white" />
+                </svg>
+                <a href="">About Us</a>
+              </li>
+              <li>
+                <svg
+                  class="circle-icon"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="4.5" cy="4.5" r="4" stroke="white" />
+                </svg>
+                <a href="">Projects</a>
+              </li>
+              <li>
+                <svg
+                  class="circle-icon"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="4.5" cy="4.5" r="4" stroke="white" />
+                </svg>
+                <a href="">News</a>
+              </li>
+              <li>
+                <svg
+                  class="circle-icon"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="4.5" cy="4.5" r="4" stroke="white" />
+                </svg>
+                <a href="">Contact</a>
+              </li>
+            </ul>
+          </li>
+          <li class="navbar-list__social-icons">
+            <a href=""
+              ><img
+                src="./assets/images/svg/facebook-icon.svg"
+                alt="Facebook icon"
+            /></a>
+            <a href=""
+              ><img
+                src="./assets/images/svg/twitter-icon.svg"
+                alt="Twitter (X) icon"
+            /></a>
+            <a href=""
+              ><img
+                src="./assets/images/svg/instagram-icon.svg"
+                alt="Instagram icon"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="home-header__about-us-slider">
+        <div>
+          <hgroup>
+            <h1 class="fs-xl fw-bold">SIMPLE &amp; MODERN</h1>
+            <h3 class="fs-m">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
+          </hgroup>
+        </div>
+        <div>
+          <p class="fs-m">
+            But I must explain to you how all this mistaken idea of denouncing
+            pleasure and praising pain was born and I will give you a complete
+            account of the system, and expound the actual teachings of the great
+            explorer of the truth, the master-builder of human happiness.
+          </p>
+        </div>
+        <div>
+          <p class="fs-m">
+            No one rejects, dislikes, or avoids pleasure itself, because it is
+            pleasure, but because those who do not know how to pursue pleasure
+            rationally encounter consequences that are extremely painful.
+          </p>
+        </div>
+        <div>
+          <p class="fs-m">
+            Nor again is there anyone who loves or pursues or desires to obtain
+            pain of itself, because it is pain, but because occasionally
+            circumstances occur in which toil and pain can procure him some
+            great pleasure.
+          </p>
+        </div>
+        <div>
+          <p class="fs-m">
+            To take a trivial example, which of us ever undertakes laborious
+            physical exercise, except to obtain some advantage from it?
+          </p>
+        </div>
+      </div>
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="home-header__scroll-icon"
+      >
+        <path
+          d="M23.9983 19.3036C23.9983 19.2366 23.9648 19.1613 23.9146 19.111L23.4961 18.6925C23.4459 18.6423 23.3705 18.6088 23.3036 18.6088C23.2366 18.6088 23.1613 18.6423 23.111 18.6925L19.8214 21.9821L16.5318 18.6925C16.4816 18.6423 16.4063 18.6088 16.3393 18.6088C16.264 18.6088 16.197 18.6423 16.1468 18.6925L15.7282 19.111C15.678 19.1613 15.6445 19.2366 15.6445 19.3036C15.6445 19.3705 15.678 19.4459 15.7282 19.4961L19.6289 23.3968C19.6791 23.447 19.7545 23.4805 19.8214 23.4805C19.8884 23.4805 19.9637 23.447 20.014 23.3968L23.9146 19.4961C23.9648 19.4459 23.9983 19.3705 23.9983 19.3036Z"
+          fill="white"
+        />
+        <circle opacity="0.7" cx="20" cy="20" r="19.5" stroke="white" />
+      </svg>
+      <aside class="home-header__dots-container"></aside>
+    </header>
+    <main id="home-main"></main>
+    <footer id="home-footer"></footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-    <script defer src="./js/main.js"></script>
-  </head>
-  <body>
-    <nav></nav>
-    <header></header>
-    <main></main>
-    <footer></footer>
   </body>
 </html>
