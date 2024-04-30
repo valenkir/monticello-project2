@@ -1,3 +1,6 @@
+@use "./variables";
+@use "sass:color";
+
 @font-face {
   font-family: "Source Sans 3";
   src: url("../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf")
@@ -8,17 +11,21 @@
 /*HEADER*/
 
 .home-header {
-  background-image: linear-gradient(to right, #55b7ffe6, #7e5affe6),
+  background-image: linear-gradient(
+      to right,
+      color.adjust(variables.$primaryAccentColor, $alpha: -0.1),
+      color.adjust(variables.$secondaryAccentColor, $alpha: -0.1)
+    ),
     url("../assets/images/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  color: #ffffff;
+  color: variables.$secondaryColor;
   position: relative;
 }
 
 .navbar {
-  color: #ffffff;
+  color: variables.$secondaryColor;
 }
 
 .navbar-list__logo {
@@ -32,10 +39,10 @@
   &--mobile-menu {
     display: flex;
     flex-direction: column;
-    background-color: #7e5aff;
+    background-color: variables.$secondaryAccentColor;
     width: 100vw;
     position: absolute;
-    top: 120px;
+    top: 60px;
     left: 50%;
     transform: translate(-50%, 0);
     gap: 20px;
@@ -79,6 +86,41 @@
   }
 }
 
+/*PROJECTS*/
+.home-projects {
+  position: relative;
+}
+
+.projects-trade-center,
+.projects-commerce-center {
+  padding: 0 10px;
+}
+
+.section-heading {
+  position: relative;
+  margin-top: 130px;
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: variables.$primaryColor;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 1px;
+    width: 100px;
+  }
+}
+
+.projects-trade-center__imgs,
+.projects-commerce-center__imgs {
+  display: none;
+}
+
+.projects-trade-center__text,
+.projects-commerce-center__text {
+  text-align: center;
+}
+
 @media only screen and (min-width: 550px) {
   .home-header {
     padding-top: 52px;
@@ -88,6 +130,27 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+  }
+
+  .navbar-list__links {
+    &--mobile-menu {
+      top: 120px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .navbar-list__mobile-links {
+    display: none;
+  }
+
+  .navbar-list__links {
+    display: flex;
+    gap: 70px;
+  }
+
+  .home-header__about-us-slider {
+    margin-top: 280px;
   }
 
   .home-header__dots-container {
@@ -107,35 +170,61 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      border: 2px solid #ffff;
+      border: 2px solid variables.$secondaryColor;
       cursor: pointer;
       background-color: transparent;
     }
   }
 
   .slick-active .dots__item {
-    background-color: #ffff;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .navbar {
-    position: fixed;
-    width: 100%;
-    z-index: 2;
+    background-color: variables.$secondaryColor;
   }
 
-  .navbar-list__mobile-links {
-    display: none;
+  /*PROJECTS*/
+  .projects-trade-center {
+    padding-top: 57px;
+    padding-left: 200px;
   }
 
-  .navbar-list__links {
-    display: flex;
+  .projects-commerce-center {
+    padding: 57px 200px 0;
+  }
+
+  .projects-trade-center__imgs,
+  .projects-commerce-center__imgs {
+    display: block;
+  }
+
+  .projects-trade-center__imgs--bg {
+    position: absolute;
+    background-color: variables.$primaryAccentColor;
+    width: 585px;
+    height: 470px;
+    top: 120px;
+    left: 0;
+    z-index: -1;
+  }
+
+  .projects-commerce-center__imgs--bg {
+    position: absolute;
+    background-color: variables.$secondaryAccentColor;
+    width: 585px;
+    height: 470px;
+    bottom: 70px;
+    right: 0;
+    z-index: -1;
+  }
+
+  .projects-trade-center {
     gap: 70px;
   }
 
-  .home-header__about-us-slider {
-    margin-top: 280px;
+  .projects-trade-center__text,
+  .projects-commerce-center__text {
+    text-align: left;
+    p {
+      width: 60%;
+    }
   }
 }
 
