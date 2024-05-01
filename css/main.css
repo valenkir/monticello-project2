@@ -186,7 +186,7 @@
   .news__slider-dots {
     display: block;
     position: absolute;
-    bottom: 20%;
+    bottom: 10%;
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 15;
