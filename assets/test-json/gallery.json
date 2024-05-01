@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Bravery Tower Building",
+    "url": "./assets/images/img/gallery-building-1.jpg"
+  },
+  {
+    "name": "Terror Glade Lookout Building",
+    "url": "./assets/images/img/gallery-building-2.png"
+  },
+  {
+    "name": "Summer Copse Lookout Building",
+    "url": "./assets/images/img/gallery-building-3.png"
+  },
+  {
+    "name": "Little Meadow Spire Building",
+    "url": "./assets/images/img/gallery-building-4.png"
+  },
+  {
+    "name": "Dead Bog Pillar Building",
+    "url": "./assets/images/img/gallery-building-5.png"
+  },
+  {
+    "name": "Fusion Tower Building",
+    "url": "./assets/images/img/gallery-building-6.jpg"
+  }
+]

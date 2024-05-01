@@ -107,4 +107,29 @@ $(() => {
         ],
       });
     });
+
+  /*GALLERY*/
+  fetch("./assets/test-json/gallery.json")
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Request failed!");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      data.forEach((image, index) => {
+        if (index < 5) {
+          const imgElem = $(`<img src=${image.url} alt=${image.name}/>`);
+          if (window.screen.width >= 1000) {
+            index === 0
+              ? imgElem.addClass("img-1")
+              : imgElem.addClass(`img-${index + 1}`);
+          } else {
+            imgElem.addClass("gallery-img-block__img");
+          }
+
+          $(".gallery-img-block").append(imgElem);
+        }
+      });
+    });
 });

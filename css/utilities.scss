@@ -114,9 +114,9 @@
   width: 70%;
 }
 
-@mixin section-heading($color) {
+@mixin section-heading($color, $margin-top) {
   position: relative;
-  margin-top: 130px;
+  margin-top: $margin-top;
   color: $color;
   &:after {
     content: "";
@@ -131,42 +131,15 @@
 }
 
 .section-heading-black {
-  @include section-heading(variables.$primaryColor);
+  @include section-heading(variables.$primaryColor, 130px);
 }
 
 .section-heading-white {
-  @include section-heading(variables.$secondaryColor);
+  @include section-heading(variables.$secondaryColor, 0px);
 }
 
 .object-fit-contain {
   object-fit: contain;
-}
-
-@mixin dots {
-  display: flex;
-  gap: 2rem;
-}
-
-.dots__item {
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 2px solid variables.$secondaryColor;
-  cursor: pointer;
-  background-color: transparent;
-}
-
-.dots-header {
-  justify-content: space-between;
-  flex-direction: column;
-  @include dots;
-}
-
-.dots-news {
-  @include dots;
-  justify-content: center;
-  align-items: center;
 }
 
 .card {
@@ -231,5 +204,34 @@ a {
 @media only screen and (min-width: 550px) {
   .circle-icon {
     margin-right: 14px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  @mixin dots {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .dots__item {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid variables.$secondaryColor;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  .dots-header {
+    justify-content: space-between;
+    flex-direction: column;
+    @include dots;
+  }
+
+  .dots-news {
+    @include dots;
+    justify-content: center;
+    align-items: center;
   }
 }

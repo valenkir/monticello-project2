@@ -157,7 +157,7 @@
 
 .section-heading-white {
   position: relative;
-  margin-top: 130px;
+  margin-top: 0px;
   color: white;
 }
 .section-heading-white:after {
@@ -174,30 +174,6 @@
 .object-fit-contain {
   -o-object-fit: contain;
      object-fit: contain;
-}
-
-.dots__item {
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 2px solid white;
-  cursor: pointer;
-  background-color: transparent;
-}
-
-.dots-header {
-  justify-content: space-between;
-  flex-direction: column;
-  display: flex;
-  gap: 2rem;
-}
-
-.dots-news {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
 }
 
 .card {
@@ -260,5 +236,28 @@ a {
 @media only screen and (min-width: 550px) {
   .circle-icon {
     margin-right: 14px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .dots__item {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  .dots-header {
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    gap: 2rem;
+  }
+  .dots-news {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
   }
 }/*# sourceMappingURL=utilities.css.map */
