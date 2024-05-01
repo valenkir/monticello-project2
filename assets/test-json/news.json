@@ -5,7 +5,7 @@
     "image_url": "./assets/images/img/post1-cover.png",
     "img_description": "Building 1",
     "author": "Alja Brun",
-    "author_img_url": "../assets/images/img/alja_img.png",
+    "author_img_url": "./assets/images/img/alja_img.png",
     "published_at": "2020-01-20T16:09:34.000000Z"
   },
   {
@@ -14,7 +14,7 @@
     "image_url": "./assets/images/img/post2-cover.png",
     "img_description": "Building 2",
     "author": "Dominic Freeman",
-    "author_img_url": "../assets/images/img/dominic_img.png",
+    "author_img_url": "./assets/images/img/dominic_img.png",
     "published_at": "2019-12-13T10:00:02.000000Z"
   },
   {
@@ -23,7 +23,7 @@
     "image_url": "./assets/images/img/post3-cover.png",
     "img_description": "Building 3",
     "author": "Alice Ward",
-    "author_img_url": "../assets/images/img/alice_img.png",
+    "author_img_url": "./assets/images/img/alice_img.png",
     "published_at": "2019-11-30T15:00:22.000000Z"
   },
   {
@@ -32,7 +32,7 @@
     "image_url": "./assets/images/img/post4-cover.png",
     "img_description": "Building 4",
     "author": "Dominic Freeman",
-    "author_img_url": "../assets/images/img/dominic_img.png",
+    "author_img_url": "./assets/images/img/dominic_img.png",
     "published_at": "2023-04-15T12:00:02.000000Z"
   },
   {
@@ -41,7 +41,7 @@
     "image_url": "./assets/images/img/post5-cover.png",
     "img_description": "Building 5",
     "author": "Alice Ward",
-    "author_img_url": "../assets/images/img/alice_img.png",
+    "author_img_url": "./assets/images/img/alice_img.png",
     "published_at": "2023-04-15T12:00:02.000000Z"
   },
   {
@@ -50,7 +50,7 @@
     "image_url": "./assets/images/img/post3-cover.png",
     "img_description": "Building 6",
     "author": "Alja Brun",
-    "author_img_url": "../assets/images/img/alja_img.png",
+    "author_img_url": "./assets/images/img/alja_img.png",
     "published_at": "2024-03-14T12:00:02.000000Z"
   }
 ]
