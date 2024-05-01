@@ -142,10 +142,36 @@
   object-fit: contain;
 }
 
+@mixin dots {
+  display: flex;
+  gap: 2rem;
+}
+
+.dots__item {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid variables.$secondaryColor;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.dots-header {
+  justify-content: space-between;
+  flex-direction: column;
+  @include dots;
+}
+
+.dots-news {
+  @include dots;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
-  width: 370px;
-  height: 514px;
   background-color: variables.$secondaryColor;
+  margin-right: 30px;
   &-info {
     padding: 20px 20px 20px 30px;
   }
@@ -154,6 +180,9 @@
     grid-template-areas:
       "auth-img auth-name"
       "auth-img auth-date";
+    grid-template-columns: 0.3fr 1fr;
+    align-items: center;
+    justify-content: center;
   }
   &-author-img {
     grid-area: auth-img;

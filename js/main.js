@@ -1,3 +1,15 @@
+const parseDate = (date) => {
+  const day = date.toLocaleString("default", {
+    day: "numeric",
+  });
+  const month = date.toLocaleString("default", {
+    month: "short",
+  });
+  const year = date.toLocaleString("default", { year: "numeric" });
+
+  return `${day} ${month} ${year}`;
+};
+
 $(() => {
   /*MOBILE NAVIGATION*/
   $(".navbar-list__mobile-links").on("click", (event) => {
@@ -13,7 +25,7 @@ $(() => {
     appendDots: $(".home-header__dots-container"),
     dots: true,
     zIndex: 1,
-    dotsClass: "dots",
+    dotsClass: "dots-header",
     arrows: false,
     customPaging: () => '<a class="dots__item" role="button"></a>',
   });
@@ -53,7 +65,9 @@ $(() => {
         cardAuthorName.addClass(
           "card-author-name text-uppercase primary-txt-color"
         );
-        const cardPostDate = $(`<span>${cardData.published_at}</span>`);
+        const cardPostDate = $(
+          `<span>${parseDate(new Date(cardData.published_at))}</span>`
+        );
         cardPostDate.addClass("card-post-date");
 
         cardAuthorContainer.append(cardAuthorImg, cardAuthorName, cardPostDate);
@@ -61,6 +75,36 @@ $(() => {
         card.append(cardCover, cardInfo);
         card.addClass("card");
         $(".news__slider").append(card);
+      });
+
+      /*NEWS SLIDER*/
+      $(".news__slider").slick({
+        variableWidth: true,
+        arrows: false,
+        mobileFirst: true,
+        responsive: [
+          {
+            breakpoint: 1000,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              arrows: true,
+              prevArrow: $(".news__slider-arrow--left"),
+              nextArrow: $(".news__slider-arrow--right"),
+              appendDots: $(".news__slider-dots"),
+              dots: true,
+              dotsClass: "dots-news",
+              customPaging: () => '<a class="dots__item" role="button"></a>',
+            },
+          },
+          {
+            breakpoint: 550,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+        ],
       });
     });
 });

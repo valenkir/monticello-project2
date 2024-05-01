@@ -97,6 +97,58 @@
   text-align: center;
 }
 
+/*NEWS*/
+.news {
+  padding: 135px 50px 0 50px;
+  position: relative;
+  background-image: linear-gradient(to right, #3c7fd4, #24ccfa);
+}
+.news::before {
+  content: "";
+  background-image: url("../assets/images/img/news-bg.png");
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+
+.news__slider {
+  margin-left: auto;
+  margin-right: auto;
+  height: 570px;
+}
+.news__slider .slick-slide {
+  width: 370px;
+  height: 520px;
+}
+
+.news__slider-arrow--left {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, 0);
+  cursor: pointer;
+  top: 55%;
+  left: 10%;
+}
+
+.news__slider-arrow--right {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, 0);
+  cursor: pointer;
+  top: 55%;
+  right: 10%;
+}
+
+.news__slider-dots {
+  display: none;
+}
+
 @media only screen and (min-width: 550px) {
   .home-header {
     padding-top: 52px;
@@ -109,26 +161,11 @@
   .navbar-list__links--mobile-menu {
     top: 120px;
   }
+  .news {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
-/*NEWS*/
-.news {
-  padding-top: 135px;
-  position: relative;
-  background-image: linear-gradient(to right, #3c7fd4, #24ccfa);
-}
-.news::before {
-  content: "";
-  background-image: url("../assets/images/img/news-bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-}
-
 @media only screen and (min-width: 1000px) {
   .navbar-list__mobile-links {
     display: none;
@@ -146,20 +183,13 @@
     right: 52px;
     top: 42%;
   }
-  .dots {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .dots__item {
+  .news__slider-dots {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 2px solid white;
-    cursor: pointer;
-    background-color: transparent;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 15;
   }
   .slick-active .dots__item {
     background-color: white;
@@ -204,6 +234,9 @@
   .projects-trade-center__text p,
   .projects-commerce-center__text p {
     width: 60%;
+  }
+  .news {
+    padding: 135px 250px 135px;
   }
 }
 @media only screen and (min-width: 1800px) {
