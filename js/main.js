@@ -31,7 +31,7 @@ $(() => {
   });
 
   /*NEWS CARDS*/
-  fetch("../assets/test-json/news.json")
+  fetch("./assets/test-json/news.json")
     .then((res) => {
       if (!res.ok) {
         throw new Error("Request failed!");
