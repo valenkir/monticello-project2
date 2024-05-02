@@ -96,6 +96,10 @@
   justify-content: center;
 }
 
+.d-none {
+  display: none;
+}
+
 .circle-icon {
   margin-right: 8px;
   height: 10px;
@@ -132,6 +136,9 @@
 
 .section-heading-black {
   @include section-heading(variables.$primaryColor, 130px);
+  &--form {
+    @include section-heading(variables.$primaryColor, 0px);
+  }
 }
 
 .section-heading-white {
@@ -230,11 +237,11 @@ a {
   background-color: transparent;
 }
 
-.primaryBtn {
+.primary-btn {
   @include primaryBtn(190px);
 }
 
-.formBtn {
+.form-btn {
   @include primaryBtn(140px);
 }
 
