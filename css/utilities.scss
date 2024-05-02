@@ -170,6 +170,43 @@
   }
 }
 
+.marker {
+  position: relative;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 0px 15px 0px #b0b0b0;
+}
+.marker::after {
+  height: 16px;
+  width: 16px;
+  background-color: #7e5aff;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  content: "";
+  transform: translate(-50%, 0);
+  top: 40%;
+  left: 50%;
+}
+.marker::before {
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.7;
+  content: "";
+  transform: translate(-50%, 0);
+  top: -30%;
+  left: 50%;
+  z-index: 0;
+  position: absolute;
+}
+.social-icons {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -204,6 +241,11 @@ a {
 @media only screen and (min-width: 550px) {
   .circle-icon {
     margin-right: 14px;
+  }
+  .social-icons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 }
 

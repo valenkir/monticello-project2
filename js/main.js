@@ -10,9 +10,11 @@ const parseDate = (date) => {
   return `${day} ${month} ${year}`;
 };
 
+/*MAP*/
 const center = [-73.935242, 40.73061];
 const map = tt.map({
   key: "cCWixuY0nWKANcaBVjgX2VaA5L0M7rrc",
+  interactive: false,
   container: "map",
   center: center,
   zoom: 10,

@@ -57,10 +57,6 @@
   display: block;
 }
 
-.navbar-list__social-icons {
-  display: none;
-}
-
 .home-header__slider-dots {
   display: none;
 }
@@ -181,13 +177,22 @@
   height: 700px;
 }
 
-@media only screen and (min-width: 550px) {
-  .navbar-list__social-icons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
+.footer {
+  background-image: linear-gradient(
+      to right,
+      color.adjust(variables.$primaryAccentColor, $alpha: -0.1),
+      color.adjust(variables.$secondaryAccentColor, $alpha: -0.1)
+    ),
+    url("../assets/images/img/gallery-building-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 524px;
+  color: variables.$secondaryColor;
+  padding-top: 200px;
+  justify-content: space-around;
+}
 
+@media only screen and (min-width: 550px) {
   .navbar-list__links {
     &--mobile-menu {
       top: 120px;

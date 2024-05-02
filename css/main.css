@@ -49,10 +49,6 @@
   display: block;
 }
 
-.navbar-list__social-icons {
-  display: none;
-}
-
 .home-header__slider-dots {
   display: none;
 }
@@ -155,12 +151,23 @@
   max-width: 214px;
 }
 
+/*MAP & CONTACTS*/
+.map-and-contacts__map {
+  width: 100%;
+  height: 700px;
+}
+
+.footer {
+  background-image: linear-gradient(to right, rgba(85, 183, 255, 0.9), rgba(126, 90, 255, 0.9)), url("../assets/images/img/gallery-building-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 524px;
+  color: white;
+  padding-top: 200px;
+  justify-content: space-around;
+}
+
 @media only screen and (min-width: 550px) {
-  .navbar-list__social-icons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
   .navbar-list__links--mobile-menu {
     top: 120px;
   }

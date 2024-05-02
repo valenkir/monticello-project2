@@ -38,41 +38,6 @@
     <link rel="stylesheet" href="./css/main.css" />
     <script defer src="./js/main.js"></script>
   </head>
-  <style>
-    .marker {
-      position: relative;
-      height: 70px;
-      width: 70px;
-      border-radius: 50%;
-      background-color: white;
-      box-shadow: 0px 0px 15px 0px #b0b0b0;
-    }
-    .marker::after {
-      height: 16px;
-      width: 16px;
-      background-color: #7e5aff;
-      border-radius: 50%;
-      position: absolute;
-      z-index: 2;
-      content: "";
-      transform: translate(-50%, 0);
-      top: 40%;
-      left: 50%;
-    }
-    .marker::before {
-      width: 106px;
-      height: 106px;
-      border-radius: 50%;
-      background-color: white;
-      opacity: 0.7;
-      content: "";
-      transform: translate(-50%, 0);
-      top: -30%;
-      left: 50%;
-      z-index: 0;
-      position: absolute;
-    }
-  </style>
   <body>
     <header id="home-header" class="home-header">
       <nav class="navbar">
@@ -158,7 +123,7 @@
               </li>
             </ul>
           </li>
-          <li class="navbar-list__social-icons">
+          <li class="social-icons">
             <a href=""
               ><img
                 src="./assets/images/svg/facebook-icon.svg"
@@ -364,7 +329,34 @@
         ></div>
       </section>
     </main>
-    <footer id="home-footer"></footer>
+    <footer id="home-footer" class="footer d-flex">
+      <div class="d-flex align-items-center d-flex flex-column">
+        <img
+          src="./assets/images/svg/Logo.svg"
+          alt="Monticello logo"
+          class="navbar-list__logo"
+        />
+        <label class="fs-xs footer__copyright mt-40"
+          >Copyrights © 2020 Montichello</label
+        >
+      </div>
+
+      <div class="social-icons">
+        <a href=""
+          ><img src="./assets/images/svg/facebook-icon.svg" alt="Facebook icon"
+        /></a>
+        <a href=""
+          ><img
+            src="./assets/images/svg/twitter-icon.svg"
+            alt="Twitter (X) icon"
+        /></a>
+        <a href=""
+          ><img
+            src="./assets/images/svg/instagram-icon.svg"
+            alt="Instagram icon"
+        /></a>
+      </div>
+    </footer>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
