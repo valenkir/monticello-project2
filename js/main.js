@@ -10,6 +10,23 @@ const parseDate = (date) => {
   return `${day} ${month} ${year}`;
 };
 
+const center = [-73.935242, 40.73061];
+const map = tt.map({
+  key: "cCWixuY0nWKANcaBVjgX2VaA5L0M7rrc",
+  container: "map",
+  center: center,
+  zoom: 10,
+  style:
+    "https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVnNXRGpENmlBemRPbHNKYjtkZmM2MTU4Yi0xNzJjLTQyMTMtYjAxNi1lNjcxNWIyNTc0ZjY=/drafts/0.json?key=cCWixuY0nWKANcaBVjgX2VaA5L0M7rrc",
+});
+map.on("load", () => {
+  const markerElem = document.createElement("div");
+  markerElem.classList.add("marker");
+  const marker = new tt.Marker({ element: markerElem })
+    .setLngLat(center)
+    .addTo(map);
+});
+
 $(() => {
   /*MOBILE NAVIGATION*/
   $(".navbar-list__mobile-links").on("click", (event) => {
@@ -87,7 +104,7 @@ $(() => {
             breakpoint: 1000,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToScroll: 1,
               arrows: true,
               prevArrow: $(".news__slider-arrow--left"),
               nextArrow: $(".news__slider-arrow--right"),
@@ -101,7 +118,7 @@ $(() => {
             breakpoint: 550,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToScroll: 1,
             },
           },
         ],
