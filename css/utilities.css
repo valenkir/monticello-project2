@@ -314,7 +314,7 @@ a {
     flex-wrap: wrap;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
   .dots__item {
     display: block;
     width: 10px;
@@ -335,17 +335,5 @@ a {
     gap: 2rem;
     justify-content: center;
     align-items: center;
-  }
-  .success-message {
-    position: absolute;
-    padding: 30px 50px;
-    right: 0;
-    bottom: -25%;
-    margin-right: 10px;
-    border: 3px solid #7e5aff;
-    background-color: white;
-    color: #2c4058;
-    overflow: hidden;
-    white-space: nowrap;
   }
 }/*# sourceMappingURL=utilities.css.map */

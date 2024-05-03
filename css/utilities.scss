@@ -269,7 +269,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
   @mixin dots {
     display: flex;
     gap: 2rem;
@@ -295,18 +295,5 @@ a {
     @include dots;
     justify-content: center;
     align-items: center;
-  }
-
-  .success-message {
-    position: absolute;
-    padding: 30px 50px;
-    right: 0;
-    bottom: -25%;
-    margin-right: 10px;
-    border: 3px solid variables.$secondaryAccentColor;
-    background-color: variables.$secondaryColor;
-    color: variables.$primaryColor;
-    overflow: hidden;
-    white-space: nowrap;
   }
 }
