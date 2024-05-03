@@ -314,7 +314,7 @@ a {
     flex-wrap: wrap;
   }
 }
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
   .dots__item {
     display: block;
     width: 10px;

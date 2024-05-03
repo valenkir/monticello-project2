@@ -32,17 +32,25 @@
 }
 .navbar-list__links--mobile-menu {
   display: flex;
+  justify-content: space-evenly;
   flex-direction: column;
+  font-size: 24px;
   background-color: #7e5aff;
   width: 100vw;
+  height: 100vh;
   position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translate(-50%, 0);
+  top: 0;
+  left: 0;
   gap: 20px;
   text-align: center;
   padding: 20%;
   z-index: 1;
+}
+
+.navbar-list__links-icon--mobile {
+  position: absolute;
+  top: 5%;
+  left: 90%;
 }
 
 .navbar-list__mobile-links {
@@ -220,9 +228,6 @@
 }
 
 @media only screen and (min-width: 550px) {
-  .navbar-list__links--mobile-menu {
-    top: 120px;
-  }
   .projects-trade-center__imgs,
   .projects-commerce-center__imgs {
     display: block;
@@ -287,6 +292,9 @@
 }
 @media only screen and (min-width: 1000px) {
   .navbar-list__mobile-links {
+    display: none;
+  }
+  .navbar-list__links-icon--mobile {
     display: none;
   }
   .navbar-list__links {
