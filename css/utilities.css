@@ -139,6 +139,14 @@
   margin-top: 20px;
 }
 
+.gap-30 {
+  gap: 30px;
+}
+
+.gap-40 {
+  gap: 40px;
+}
+
 .w-70 {
   width: 70%;
 }
@@ -259,6 +267,10 @@
 
 .social-icons {
   display: none;
+}
+
+.error-color {
+  color: #dc0844;
 }
 
 * {

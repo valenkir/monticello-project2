@@ -327,14 +327,14 @@
           class="map-and-contacts__map"
           style="width: 100%; height: 700px"
         ></div>
-        <div class="map-and-contacts__form">
+        <div class="map-and-contacts__form-container">
           <h2
-            class="fs-l fw-bold primary-txt-color section-heading-black--form text-uppercase"
+            class="fs-l fw-bold primary-txt-color section-heading-black--form text-uppercase text-center"
           >
             Get in touch
           </h2>
           <div class="map-and-contacts__form-fields mt-40">
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column gap-40">
               <label for="">
                 <i
                   class="fa-solid fa-location-dot fa-xs me-10"
@@ -361,29 +361,44 @@
                 >From 07:05AM to 19:30PM</label
               >
             </div>
-            <form method="POST" class="d-flex flex-column">
+            <form
+              method="POST"
+              class="d-flex flex-column gap-30 map-and-contacts__form"
+            >
               <label for="name" class="d-none"></label>
               <input
                 id="name"
                 type="text"
-                class="map-and-contacts__form-input"
+                class="map-and-contacts__form-input map-and-contacts__form-input-name"
                 placeholder="Full name"
+                minlength="2"
+                required
               />
+              <label
+                class="map-and-contacts__form-input-name-error d-none fs-xs error-color"
+              ></label>
               <label for="email" class="d-none"></label>
               <input
                 id="email"
                 type="email"
-                class="map-and-contacts__form-input"
+                class="map-and-contacts__form-input map-and-contacts__form-input-email"
                 placeholder="Email"
+                required
               />
+              <label
+                class="map-and-contacts__form-input-email-error d-none fs-xs error-color"
+              ></label>
               <button
-                type="button"
+                type="submit"
                 class="map-and-contacts__form-fields-btn text-uppercase form-btn"
               >
                 Submit
               </button>
             </form>
           </div>
+        </div>
+        <div class="success-message d-none">
+          <p class="fw-bold">The form is submitted!</p>
         </div>
       </section>
     </main>
