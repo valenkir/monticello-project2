@@ -307,6 +307,7 @@
 
   .navbar-list__links {
     display: flex;
+    align-items: center;
     gap: 70px;
   }
 
@@ -350,7 +351,9 @@
 
   .projects-trade-center__imgs,
   .projects-commerce-center__imgs {
-    display: block;
+    img {
+      width: 630px;
+    }
   }
 
   .projects-trade-center__imgs--bg {

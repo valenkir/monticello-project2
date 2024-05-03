@@ -291,6 +291,7 @@
   }
   .navbar-list__links {
     display: flex;
+    align-items: center;
     gap: 70px;
   }
   .home-header__about-us-slider {
@@ -325,9 +326,9 @@
     flex-direction: row;
     align-items: flex-start;
   }
-  .projects-trade-center__imgs,
-  .projects-commerce-center__imgs {
-    display: block;
+  .projects-trade-center__imgs img,
+  .projects-commerce-center__imgs img {
+    width: 630px;
   }
   .projects-trade-center__imgs--bg {
     position: absolute;

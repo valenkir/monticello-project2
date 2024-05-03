@@ -111,6 +111,7 @@ $(() => {
         variableWidth: true,
         arrows: false,
         mobileFirst: true,
+        autoplay: true,
         responsive: [
           {
             breakpoint: 1000,
