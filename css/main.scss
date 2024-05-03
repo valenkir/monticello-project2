@@ -91,6 +91,9 @@
 .projects-trade-center,
 .projects-commerce-center {
   padding: 0 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .projects-trade-center__imgs,
@@ -243,6 +246,15 @@
     }
   }
 
+  .projects-trade-center__imgs,
+  .projects-commerce-center__imgs {
+    display: block;
+    img {
+      max-width: 630px;
+      width: 100%;
+    }
+  }
+
   .news {
     padding-left: 100px;
     padding-right: 100px;
@@ -326,10 +338,14 @@
   .projects-trade-center {
     padding-top: 57px;
     padding-left: 200px;
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .projects-commerce-center {
     padding: 57px 200px 0;
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .projects-trade-center__imgs,
