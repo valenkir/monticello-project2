@@ -70,10 +70,14 @@
 }
 
 .home-header__scroll-icon {
-  display: inline-block;
-  width: 100%;
   cursor: pointer;
   margin-top: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
 }
 
 /*SLIDER*/
@@ -302,7 +306,7 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
   .navbar-list__mobile-links {
     display: none;
   }
@@ -315,6 +319,11 @@
     display: flex;
     align-items: center;
     gap: 70px;
+    li:hover {
+      svg {
+        fill: variables.$secondaryColor;
+      }
+    }
   }
 
   .home-header__about-us-slider {
@@ -328,6 +337,16 @@
     top: 42%;
   }
 
+  .home-header__scroll-icon {
+    transition-property: transform;
+    transition-duration: 500ms;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
   .news__slider-dots {
     display: block;
     position: absolute;

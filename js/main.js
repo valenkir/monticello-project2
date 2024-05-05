@@ -46,6 +46,25 @@ $(() => {
     $(".navbar-list__links-icon--mobile").addClass("d-none");
   };
 
+  const scrollToElement = (elem) => {
+    $("body, html").animate(
+      {
+        scrollTop: elem.offset().top,
+      },
+      2000
+    );
+  };
+
+  const changeNavLinksOnHover = (elemTarget) => {
+    const links = $(".navbar-list__links").find("a");
+    for (let elem of links) {
+      if (elem !== elemTarget) {
+        $(elem).siblings("svg").css("fill", "none");
+      }
+    }
+    $(elemTarget).siblings("svg").css("fill", "#ffffff");
+  };
+
   /*MOBILE NAVIGATION*/
   $(".navbar-list__mobile-links").on("click", () => {
     $(".navbar-list__links").addClass("navbar-list__links--mobile-menu");
@@ -59,6 +78,43 @@ $(() => {
     if ($(event.target).is("a")) {
       hideMobileMenu();
     }
+  });
+
+  /*NAVIGATION SCROLL & ANIMATION*/
+  const projectSection = $("#home-projects");
+  const newsSection = $("#news");
+  const contactSection = $("#map-and-contacts");
+
+  $(".navbar-list__links-projects").on("click", (event) => {
+    event.preventDefault();
+    scrollToElement(projectSection);
+  });
+
+  $(".navbar-list__links-news").on("click", (event) => {
+    event.preventDefault();
+    scrollToElement(newsSection);
+  });
+
+  $(".navbar-list__links-contacts").on("click", (event) => {
+    event.preventDefault();
+    scrollToElement(contactSection);
+  });
+
+  // $(".navbar-list__links").on("mouseover", (event) => {
+  //   if ($(event.target).is("a")) {
+  //     changeNavLinksOnHover($(event.target));
+  //   }
+  // });
+
+  // $(".navbar-list__links").on("mouseleave", () => {
+  //   const links = $(".navbar-list__links").find("a");
+  //   for (let elem of links) {
+  //     $(elem).siblings("svg").css("fill", "none");
+  //   }
+  // });
+
+  $(".home-header__scroll-icon").on("click", () => {
+    scrollToElement(projectSection);
   });
 
   /*SLIDER IN HEADER*/
