@@ -245,10 +245,34 @@ a {
 
 @mixin primaryBtn($width) {
   border: 1px solid variables.$primaryColor;
+  position: relative;
   font-family: "Montserrat";
   height: 50px;
   width: $width;
   background-color: transparent;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $width;
+    height: 50px;
+    background: linear-gradient(
+      to right,
+      color.adjust(variables.$primaryAccentColor, $alpha: -0.6),
+      color.adjust(variables.$secondaryAccentColor, $alpha: -0.6)
+    );
+    border-color: transparent;
+    transform: scale(0.1);
+    opacity: 0;
+    z-index: -1;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .primary-btn {
@@ -269,7 +293,8 @@ a {
     flex-wrap: wrap;
     a {
       position: relative;
-      &:hover::after {
+      &:hover::after,
+      &:active:after {
         content: "";
         width: 50px;
         height: 50px;
