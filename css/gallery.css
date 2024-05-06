@@ -1,0 +1,23 @@
+/*font-size:14px, 18px, 22px, 44px, 80px*/
+/*#55B7FF (dates in post)*/
+/*HEADER*/
+.gallery-header {
+  padding: 15px;
+  background: linear-gradient(to right, rgba(85, 183, 255, 0.9), rgba(126, 90, 255, 0.9));
+}
+
+.gallery-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+}/*# sourceMappingURL=gallery.css.map */

@@ -8,8 +8,6 @@
   font-weight: 100 1000;
 }
 
-/*HEADER*/
-
 .home-header {
   background-image: linear-gradient(
       to right,
@@ -23,46 +21,6 @@
   color: variables.$secondaryColor;
   position: relative;
   padding-top: 52px;
-}
-
-.navbar {
-  color: variables.$secondaryColor;
-}
-
-.navbar-list__logo {
-  object-fit: contain;
-}
-
-.navbar-list__links {
-  display: none;
-  font-family: "Source Sans 3", sans-serif;
-  text-transform: uppercase;
-  &--mobile-menu {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    font-size: 24px;
-    background-color: variables.$secondaryAccentColor;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    gap: 20px;
-    text-align: center;
-    padding: 20%;
-    z-index: 1;
-  }
-}
-
-.navbar-list__links-icon--mobile {
-  position: absolute;
-  top: 5%;
-  left: 90%;
-}
-
-.navbar-list__mobile-links {
-  display: block;
 }
 
 .home-header__slider-dots {
@@ -307,25 +265,6 @@
 }
 
 @media only screen and (min-width: 1000px) {
-  .navbar-list__mobile-links {
-    display: none;
-  }
-
-  .navbar-list__links-icon--mobile {
-    display: none;
-  }
-
-  .navbar-list__links {
-    display: flex;
-    align-items: center;
-    gap: 70px;
-    li:hover {
-      svg {
-        fill: variables.$secondaryColor;
-      }
-    }
-  }
-
   .home-header__about-us-slider {
     margin-top: 200px;
   }

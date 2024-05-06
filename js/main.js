@@ -40,12 +40,6 @@ map.on("load", () => {
 });
 
 $(() => {
-  const hideMobileMenu = () => {
-    $(".navbar-list__mobile-links").children().css("fill", "none");
-    $(".navbar-list__links").removeClass("navbar-list__links--mobile-menu");
-    $(".navbar-list__links-icon--mobile").addClass("d-none");
-  };
-
   const scrollToElement = (elem) => {
     $("body, html").animate(
       {
@@ -54,31 +48,6 @@ $(() => {
       2000
     );
   };
-
-  const changeNavLinksOnHover = (elemTarget) => {
-    const links = $(".navbar-list__links").find("a");
-    for (let elem of links) {
-      if (elem !== elemTarget) {
-        $(elem).siblings("svg").css("fill", "none");
-      }
-    }
-    $(elemTarget).siblings("svg").css("fill", "#ffffff");
-  };
-
-  /*MOBILE NAVIGATION*/
-  $(".navbar-list__mobile-links").on("click", () => {
-    $(".navbar-list__links").addClass("navbar-list__links--mobile-menu");
-    $(".navbar-list__mobile-links").children().css("fill", "#ffff");
-    $(".navbar-list__links-icon--mobile").removeClass("d-none");
-  });
-
-  $(".navbar-list__links-icon--mobile").on("click", () => hideMobileMenu());
-
-  $(".navbar-list__links").on("click", (event) => {
-    if ($(event.target).is("a")) {
-      hideMobileMenu();
-    }
-  });
 
   /*NAVIGATION SCROLL & ANIMATION*/
   const projectSection = $("#home-projects");
@@ -99,19 +68,6 @@ $(() => {
     event.preventDefault();
     scrollToElement(contactSection);
   });
-
-  // $(".navbar-list__links").on("mouseover", (event) => {
-  //   if ($(event.target).is("a")) {
-  //     changeNavLinksOnHover($(event.target));
-  //   }
-  // });
-
-  // $(".navbar-list__links").on("mouseleave", () => {
-  //   const links = $(".navbar-list__links").find("a");
-  //   for (let elem of links) {
-  //     $(elem).siblings("svg").css("fill", "none");
-  //   }
-  // });
 
   $(".home-header__scroll-icon").on("click", () => {
     scrollToElement(projectSection);
@@ -231,6 +187,11 @@ $(() => {
         }
       });
     });
+
+  $(".gallery-img-block_btn").on(
+    "click",
+    () => (window.location.href = "./pages/gallery.html")
+  );
 
   /*CONTACT FORM*/
   const isContactFormValid = () => {
