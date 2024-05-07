@@ -161,6 +161,9 @@
 .card {
   background-color: variables.$secondaryColor;
   margin-right: 30px;
+  img {
+    width: 100%;
+  }
   &-info {
     padding: 20px 20px 20px 30px;
   }
@@ -172,6 +175,7 @@
     grid-template-columns: 0.3fr 1fr;
     align-items: center;
     justify-content: center;
+    column-gap: 20px;
   }
   &-author-img {
     grid-area: auth-img;

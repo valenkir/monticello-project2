@@ -207,6 +207,9 @@
   background-color: white;
   margin-right: 30px;
 }
+.card img {
+  width: 100%;
+}
 .card-info {
   padding: 20px 20px 20px 30px;
 }
@@ -216,6 +219,8 @@
   grid-template-columns: 0.3fr 1fr;
   align-items: center;
   justify-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 .card-author-img {
   grid-area: auth-img;

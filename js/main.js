@@ -102,7 +102,6 @@ $(() => {
         const cardCover = $(
           `<img src="${cardData.image_url}" alt=${cardData.img_description}/>`
         );
-        cardCover.addClass("object-fit-contain");
         const cardTitle = $(`<h4>${cardData.title}</h4>`);
         cardTitle.addClass("fs-m text-uppercase primary-txt-color fw-bold");
         const cardDescription = $(`<p>${cardData.snippet}</p>`);
