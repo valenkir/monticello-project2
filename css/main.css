@@ -269,6 +269,15 @@
   .home-header__scroll-icon:hover {
     transform: scale(1.1);
   }
+  .success-message {
+    position: absolute;
+    bottom: -25%;
+    right: 20px;
+    padding: 20px 40px;
+    background-color: white;
+    text-wrap: nowrap;
+    overflow: hidden;
+  }
 }
 @media only screen and (min-width: 1200px) {
   .news__slider-dots {
