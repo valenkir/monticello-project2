@@ -14,17 +14,18 @@
 .gallery-photos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
+  gap: 5px;
   padding: 10px 20px;
 }
+
 .gallery-item {
-  max-height: 250px;
   overflow: hidden;
 }
 
 .gallery-item img {
-  width: 100%;
   display: block;
+  object-fit: cover;
+  height: 500px;
 }
 
 .see-more-btn {
