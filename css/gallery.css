@@ -13,8 +13,10 @@ body {
 /*GALLERY*/
 .gallery-photos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  row-gap: 20px;
   padding: 10px 20px;
 }
 
@@ -30,6 +32,12 @@ body {
 }
 .gallery-item__img:hover {
   transform: scale(1.1);
+}
+.gallery-item__ref {
+  padding: 20px;
+  background-color: #55b7ff;
+  position: relative;
+  z-index: 1;
 }
 
 .see-more-btn {

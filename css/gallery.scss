@@ -19,8 +19,9 @@ body {
 
 .gallery-photos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  column-gap: 5px;
+  row-gap: 20px;
   padding: 10px 20px;
 }
 
@@ -35,6 +36,12 @@ body {
     &:hover {
       transform: scale(1.1);
     }
+  }
+  &__ref {
+    padding: 20px;
+    background-color: color.adjust(variables.$primaryAccentColor);
+    position: relative;
+    z-index: 1;
   }
 }
 

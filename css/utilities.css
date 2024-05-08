@@ -125,6 +125,10 @@
   display: none;
 }
 
+.d-block {
+  display: block;
+}
+
 .circle-icon {
   margin-right: 8px;
   height: 10px;
