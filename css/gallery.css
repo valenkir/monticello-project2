@@ -41,8 +41,7 @@ body {
   position: fixed;
   width: 70vw;
   height: 95vh;
-  border: 5px solid white;
-  background: linear-gradient(to right, #55b7ff, #7e5aff);
+  background-color: white;
   top: 3%;
   left: 50%;
   transform: translate(-50%, 0);

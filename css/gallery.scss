@@ -47,12 +47,7 @@ body {
   position: fixed;
   width: 70vw;
   height: 95vh;
-  border: 5px solid variables.$secondaryColor;
-  background: linear-gradient(
-    to right,
-    color.adjust(variables.$primaryAccentColor),
-    color.adjust(variables.$secondaryAccentColor)
-  );
+  background-color: variables.$secondaryColor;
   top: 3%;
   left: 50%;
   transform: translate(-50%, 0);
