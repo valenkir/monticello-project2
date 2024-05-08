@@ -1,6 +1,10 @@
 @use "./variables";
 @use "sass:color";
 
+body {
+  position: relative;
+}
+
 /*HEADER*/
 .gallery-header {
   padding: 15px;
@@ -11,6 +15,8 @@
   );
 }
 
+/*GALLERY*/
+
 .gallery-photos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -20,15 +26,42 @@
 
 .gallery-item {
   overflow: hidden;
-}
-
-.gallery-item img {
-  display: block;
-  object-fit: cover;
-  height: 500px;
+  &__img {
+    display: block;
+    height: 500px;
+    cursor: pointer;
+    transition-duration: 1000ms;
+    transition-property: transform;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .see-more-btn {
   display: block;
   margin: 20px auto;
+}
+
+.gallery-main__modal {
+  position: fixed;
+  width: 70vw;
+  height: 95vh;
+  border: 5px solid variables.$secondaryColor;
+  background: linear-gradient(
+    to right,
+    color.adjust(variables.$primaryAccentColor),
+    color.adjust(variables.$secondaryAccentColor)
+  );
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 50px;
+  z-index: 2;
+  i {
+    position: absolute;
+    top: 5%;
+    left: 95%;
+    cursor: pointer;
+  }
 }

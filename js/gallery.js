@@ -10,8 +10,11 @@ $(() => {
     photos.forEach((photo) => {
       const imgContainer = $("<div></div>");
       imgContainer.addClass("gallery-item");
-      const img = `<img src=${photo.urls.regular} alt=${photo.description} />`;
-      imgContainer.append(img);
+      const galleryImg = $(
+        `<img src=${photo.urls.regular} alt=${photo.description} />`
+      );
+      galleryImg.addClass("gallery-item__img");
+      imgContainer.append(galleryImg);
       $(".gallery-photos").append(imgContainer);
     });
   };
@@ -27,6 +30,25 @@ $(() => {
       }).done((photos) => {
         console.log(photos);
         showPhotos(photos);
+
+        $(".gallery-item__img").on("click", (event) => {
+          const modalImgContainer = $("<div></div>");
+          modalImgContainer.addClass("h-100");
+
+          const imgSource = $(event.target).attr("src");
+          const imgAlt = $(event.target).attr("alt");
+          const img = $(
+            `<img src=${imgSource} alt=${imgAlt} class="object-scale-down h-100 w-100" />`
+          );
+          modalImgContainer.append(img);
+          $(".gallery-main__modal").append(modalImgContainer);
+          $(".gallery-main__modal").removeClass("d-none");
+        });
+
+        $(".gallery-main__modal-close-btn").on("click", () => {
+          $(".gallery-main__modal").addClass("d-none");
+          $(".gallery-main__modal").children().not("i").remove();
+        });
         if (data.total_photos > 10) {
           const seeMoreBtn = $("<button type=button>See More</button>");
           seeMoreBtn.addClass("primary-btn text-uppercase see-more-btn");
