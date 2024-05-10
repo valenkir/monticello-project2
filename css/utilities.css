@@ -308,6 +308,7 @@ body {
 a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 .primary-btn {

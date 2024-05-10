@@ -1,22 +1,23 @@
+import { NavBar, NavLinks } from "./classes/navBar.js";
+
 $(() => {
-  const hideMobileMenu = () => {
-    $(".navbar-list__mobile-links").children().css("fill", "none");
-    $(".navbar-list__links").removeClass("navbar-list__links--mobile-menu");
-    $(".navbar-list__links-icon--mobile").addClass("d-none");
-  };
+  const navBar = new NavBar(
+    ".navbar-list__links",
+    ".navbar-list__mobile-links",
+    ".navbar-list__links-icon--mobile"
+  );
 
-  /*MOBILE NAVIGATION*/
-  $(".navbar-list__mobile-links").on("click", () => {
-    $(".navbar-list__links").addClass("navbar-list__links--mobile-menu");
-    $(".navbar-list__mobile-links").children().css("fill", "#ffff");
-    $(".navbar-list__links-icon--mobile").removeClass("d-none");
-  });
+  navBar.toggleMobileNavbar();
 
-  $(".navbar-list__links-icon--mobile").on("click", () => hideMobileMenu());
-
-  $(".navbar-list__links").on("click", (event) => {
-    if ($(event.target).is("a")) {
-      hideMobileMenu();
-    }
-  });
+  const links = [
+    { linkElem: ".navbar-list__links-projects", destination: "#home-projects" },
+    { linkElem: ".navbar-list__links-news", destination: "#news" },
+    {
+      linkElem: ".navbar-list__links-contacts",
+      destination: "#map-and-contacts",
+    },
+    { linkElem: ".home-header__scroll-icon", destination: "#home-projects" },
+  ];
+  const navLinks = new NavLinks(links);
+  navLinks.setNavigation();
 });

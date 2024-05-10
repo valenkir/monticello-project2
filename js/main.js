@@ -35,39 +35,6 @@ const createStaticMap = () => {
 createStaticMap();
 
 $(() => {
-  const scrollToElement = (elem) => {
-    $("body, html").animate(
-      {
-        scrollTop: elem.offset().top,
-      },
-      2000
-    );
-  };
-
-  /*NAVIGATION SCROLL & ANIMATION*/
-  const projectSection = $("#home-projects");
-  const newsSection = $("#news");
-  const contactSection = $("#map-and-contacts");
-
-  $(".navbar-list__links-projects").on("click", (event) => {
-    event.preventDefault();
-    scrollToElement(projectSection);
-  });
-
-  $(".navbar-list__links-news").on("click", (event) => {
-    event.preventDefault();
-    scrollToElement(newsSection);
-  });
-
-  $(".navbar-list__links-contacts").on("click", (event) => {
-    event.preventDefault();
-    scrollToElement(contactSection);
-  });
-
-  $(".home-header__scroll-icon").on("click", () => {
-    scrollToElement(projectSection);
-  });
-
   /*SLIDER IN HEADER*/
   $(".home-header__about-us-slider").slick({
     adaptiveHeight: true,
