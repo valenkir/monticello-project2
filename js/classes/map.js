@@ -9,6 +9,10 @@ export class Map {
       style: style,
     });
   }
+
+  getMap() {
+    return this.map;
+  }
   #key = "cCWixuY0nWKANcaBVjgX2VaA5L0M7rrc";
 }
 
