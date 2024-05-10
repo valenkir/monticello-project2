@@ -1,3 +1,5 @@
+import { Map, Marker } from "./classes/map.js";
+
 const parseDate = (date) => {
   const day = date.toLocaleString("default", {
     day: "numeric",
@@ -21,23 +23,16 @@ const isValidEmailField = (emailValue) =>
     );
 
 /*MAP*/
-const center = [-73.935242, 40.73061];
-const map = tt.map({
-  key: "cCWixuY0nWKANcaBVjgX2VaA5L0M7rrc",
-  interactive: false,
-  container: "map",
-  center: center,
-  zoom: 10,
-  style:
-    "https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVnNXRGpENmlBemRPbHNKYjtkZmM2MTU4Yi0xNzJjLTQyMTMtYjAxNi1lNjcxNWIyNTc0ZjY=/drafts/0.json?key=cCWixuY0nWKANcaBVjgX2VaA5L0M7rrc",
-});
-map.on("load", () => {
-  const markerElem = document.createElement("div");
-  markerElem.classList.add("marker");
-  const marker = new tt.Marker({ element: markerElem })
-    .setLngLat(center)
-    .addTo(map);
-});
+const createStaticMap = () => {
+  const center = [-73.935242, 40.73061];
+  const style =
+    "https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVnNXRGpENmlBemRPbHNKYjtkZmM2MTU4Yi0xNzJjLTQyMTMtYjAxNi1lNjcxNWIyNTc0ZjY=/drafts/0.json?key=cCWixuY0nWKANcaBVjgX2VaA5L0M7rrc";
+  const map = new Map(center, 10, style, false);
+  const marker = new Marker(map.map, "marker", center);
+  marker.createMarker();
+};
+
+createStaticMap();
 
 $(() => {
   const scrollToElement = (elem) => {
