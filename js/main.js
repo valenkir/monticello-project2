@@ -1,16 +1,7 @@
 import { Map, Marker } from "./classes/map.js";
 import { DataService } from "./classes/dataService.js";
 import { NewsCard } from "./classes/newsCard.js";
-
-const isValidNameField = (nameValue) =>
-  nameValue.length >= 2 && nameValue.trim() !== "";
-const isValidEmailField = (emailValue) =>
-  emailValue.trim() !== "" &&
-  String(emailValue)
-    .toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
+import { ContactForm } from "./classes/contactForm.js";
 
 /*MAP*/
 const createStaticMap = () => {
@@ -52,7 +43,7 @@ $(() => {
         autoplay: true,
         responsive: [
           {
-            breakpoint: 1000,
+            breakpoint: 1200,
             settings: {
               slidesToShow: 3,
               slidesToScroll: 1,
@@ -111,49 +102,21 @@ $(() => {
   );
 
   /*CONTACT FORM*/
-  const isContactFormValid = () => {
-    const nameValue = $(".map-and-contacts__form-input-name").val();
-    const emailValue = $(".map-and-contacts__form-input-email").val();
-    return isValidNameField(nameValue) && isValidEmailField(emailValue);
+  const contactFormElems = {
+    nameField: ".map-and-contacts__form-input-name",
+    emailField: ".map-and-contacts__form-input-email",
+    nameFieldError: ".map-and-contacts__form-input-name-error",
+    emailFieldError: ".map-and-contacts__form-input-email-error",
+    form: ".map-and-contacts__form",
+    successMessage: ".success-message",
   };
 
-  $(".map-and-contacts__form-input-name").on("input", (event) => {
-    const inputValue = $(event.target).val();
-    if (inputValue.length >= 2 && inputValue.trim() !== "") {
-      $(".map-and-contacts__form-input-name-error").addClass("d-none");
-    } else {
-      $(".map-and-contacts__form-input-name-error").removeClass("d-none");
-      $(event.target).val().length < 2
-        ? $(".map-and-contacts__form-input-name-error").text(
-            "Enter at least 2 characters"
-          )
-        : $(".map-and-contacts__form-input-name-error").text(
-            "The Full name field cannot be empty"
-          );
-    }
-  });
+  const handleContactForm = () => {
+    const contactForm = new ContactForm(contactFormElems);
+    contactForm.validateNameOnInput();
+    contactForm.validateEmailOnInput();
+    contactForm.showSuccessMessage();
+  };
 
-  $(".map-and-contacts__form-input-email").on("input", (event) => {
-    const inputValue = $(event.target).val();
-    if (!isValidEmailField(inputValue)) {
-      $(".map-and-contacts__form-input-email-error").removeClass("d-none");
-      $(".map-and-contacts__form-input-email-error").text(
-        "Enter a valid email"
-      );
-    } else {
-      $(".map-and-contacts__form-input-email-error").addClass("d-none");
-    }
-  });
-
-  $(".map-and-contacts__form").on("submit", (event) => {
-    event.preventDefault();
-    if (isContactFormValid()) {
-      $(".success-message").show(1000);
-      setTimeout(() => {
-        $(".success-message").hide(1000);
-      }, 3000);
-      $(".map-and-contacts__form-input-name").val("");
-      $(".map-and-contacts__form-input-email").val("");
-    }
-  });
+  handleContactForm();
 });

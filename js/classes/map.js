@@ -10,10 +10,15 @@ export class Map {
     });
   }
 
+  #key = "cCWixuY0nWKANcaBVjgX2VaA5L0M7rrc";
+
   getMap() {
     return this.map;
   }
-  #key = "cCWixuY0nWKANcaBVjgX2VaA5L0M7rrc";
+
+  get key() {
+    return this.#key;
+  }
 }
 
 export class Marker {
