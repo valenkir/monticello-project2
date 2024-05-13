@@ -2,6 +2,7 @@ import { Map, Marker } from "./classes/map.js";
 import { DataService } from "./classes/dataService.js";
 import { NewsCard } from "./classes/newsCard.js";
 import { ContactForm } from "./classes/contactForm.js";
+import { Gallery } from "./classes/galleryClass.js";
 
 /*MAP*/
 const createStaticMap = () => {
@@ -72,34 +73,22 @@ $(() => {
   createCards();
 
   /*GALLERY*/
-  fetch("./assets/test-json/gallery.json")
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("Request failed!");
-      }
-      return res.json();
-    })
-    .then((data) => {
-      data.forEach((image, index) => {
-        if (index < 5) {
-          const imgElem = $(`<img src=${image.url} alt=${image.name}/>`);
-          if (window.screen.width >= 550) {
-            index === 0
-              ? imgElem.addClass("img-1")
-              : imgElem.addClass(`img-${index + 1}`);
-          } else {
-            imgElem.addClass("gallery-img-block__img");
-          }
+  const createGallery = () => {
+    const url = "./assets/test-json/gallery.json";
+    const dataService = new DataService(url);
+    dataService.fetchData().then(() => {
+      const landingGallery = new Gallery(
+        dataService,
+        ".gallery-img-block",
+        ".gallery-img-block_btn"
+      );
 
-          $(".gallery-img-block").append(imgElem);
-        }
-      });
+      landingGallery.showPhotos();
+      landingGallery.handleShowMoreBtn();
     });
+  };
 
-  $(".gallery-img-block_btn").on(
-    "click",
-    () => (window.location.href = "./pages/gallery.html")
-  );
+  createGallery();
 
   /*CONTACT FORM*/
   const contactFormElems = {
